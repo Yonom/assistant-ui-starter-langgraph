@@ -22,7 +22,7 @@ export const sendMessage = async (params: {
   const client = createClient();
   return client.runs.stream(
     params.threadId,
-    process.env["NEXT_PUBLIC_LANGGRAPH_GRAPH_ID"]!,
+    process.env["NEXT_PUBLIC_LANGGRAPH_ASSISTANT_ID"]!,
     {
       input: {
         messages: [params.message],
