@@ -5,8 +5,9 @@ This is the [assistant-ui](https://github.com/Yonom/assistant-ui) starter projec
 First, add your langgraph API url and assistant id to `.env.local` file:
 
 ```
-NEXT_PUBLIC_LANGGRAPH_API_URL=your_langgraph_api_url
-NEXT_PUBLIC_LANGGRAPH_ASSISTANT_ID=your_assistant_id_or_graph_id
+LANGCHAIN_API_KEY=your_langchain_api_key
+LANGGRAPH_API_URL=your_langgraph_api_url
+NEXT_PUBLIC_LANGGRAPH_ASSISTANT_ID=your_assistant_id_or_graph_id 
 ```
 
 Then, run the development server:

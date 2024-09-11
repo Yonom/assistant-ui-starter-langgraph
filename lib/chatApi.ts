@@ -4,7 +4,7 @@ import { LangChainMessage } from "@assistant-ui/react-langgraph";
 const createClient = () => {
   const apiUrl =
     process.env["NEXT_PUBLIC_LANGGRAPH_API_URL"] ||
-    "https://localhost:8123/api";
+    new URL("/api", window.location.href).href;
   return new Client({
     apiUrl,
   });
@@ -17,7 +17,7 @@ export const createThread = async () => {
 
 export const sendMessage = async (params: {
   threadId: string;
-  message: LangChainMessage;
+  messages: LangChainMessage[];
 }) => {
   const client = createClient();
   return client.runs.stream(
@@ -25,7 +25,7 @@ export const sendMessage = async (params: {
     process.env["NEXT_PUBLIC_LANGGRAPH_ASSISTANT_ID"]!,
     {
       input: {
-        messages: [params.message],
+        messages: params.messages,
       },
       streamMode: "messages",
     }

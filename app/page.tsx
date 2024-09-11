@@ -1,3 +1,5 @@
+"use client";
+
 import { Thread } from "@assistant-ui/react";
 import { makeMarkdownText } from "@assistant-ui/react-markdown";
 
