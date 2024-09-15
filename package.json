@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^0.0.58",
     "@assistant-ui/react": "^0.5.51",
     "@assistant-ui/react-langgraph": "^0.0.5",
     "@assistant-ui/react-markdown": "^0.2",

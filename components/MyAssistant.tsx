@@ -1,15 +1,15 @@
 "use client";
 
 import { useRef } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { Thread } from "@assistant-ui/react";
 import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+import { makeMarkdownText } from "@assistant-ui/react-markdown";
+
 import { createThread, sendMessage } from "@/lib/chatApi";
 
-export function MyRuntimeProvider({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const MarkdownText = makeMarkdownText();
+
+export function MyAssistant() {
   const threadIdRef = useRef<string | undefined>();
   const runtime = useLangGraphRuntime({
     threadId: threadIdRef.current,
@@ -27,8 +27,9 @@ export function MyRuntimeProvider({
   });
 
   return (
-    <AssistantRuntimeProvider runtime={runtime}>
-      {children}
-    </AssistantRuntimeProvider>
+    <Thread
+      runtime={runtime}
+      assistantMessage={{ components: { Text: MarkdownText } }}
+    />
   );
 }
