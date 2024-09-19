@@ -1,4 +1,4 @@
-import { Client } from "@langchain/langgraph-sdk";
+import { Client, ThreadState } from "@langchain/langgraph-sdk";
 import { LangChainMessage } from "@assistant-ui/react-langgraph";
 
 const createClient = () => {
@@ -13,6 +13,13 @@ const createClient = () => {
 export const createThread = async () => {
   const client = createClient();
   return client.threads.create();
+};
+
+export const getThreadState = async (
+  threadId: string
+): Promise<ThreadState<{ messages: LangChainMessage[] }>> => {
+  const client = createClient();
+  return client.threads.getState(threadId);
 };
 
 export const sendMessage = async (params: {
