@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@assistant-ui/react": "^0.5.100",
-    "@assistant-ui/react-langgraph": "^0.0.25",
-    "@assistant-ui/react-markdown": "^0.2.27",
-    "@langchain/langgraph-sdk": "^0.0.22",
+    "@assistant-ui/react": "^0.7.3",
+    "@assistant-ui/react-langgraph": "^0.1.2",
+    "@assistant-ui/react-markdown": "^0.7.0",
+    "@langchain/langgraph-sdk": "^0.0.23",
     "next": "^15.0.3",
     "react": "^18",
     "react-dom": "^18",
